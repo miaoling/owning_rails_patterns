@@ -26,6 +26,10 @@ def get(path, &block)
   Routes["GET"][path] = block
 end
 
+# how it works
+# first all the get calls below run, which populate Routes with what you want the server to return for each case
+# then when you go to the appropriate url, call retrieves the corresponding response in Routes and serves it
+
 get "/" do
   "Hi there"
 end
