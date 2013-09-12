@@ -1,3 +1,5 @@
+require 'lib/router'
+
 Routes = Router.new do
   match '/' => 'home#index'
   match '/home/index' => 'home#index'

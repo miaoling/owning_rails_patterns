@@ -1,5 +1,6 @@
 require "action_controller"
 require "app/controllers/application_controller"
+require 'config/routes'
 
 class Application
   def call(env)
@@ -13,12 +14,12 @@ class Application
     controller.request = request
     controller.response = response
     controller.process(action_name) # index
-
     response.finish
   end
 
   def route(path)
-    _, controller, action = path.split("/") # => /home/index => ["", "home", "index"]
+    # _, controller, action = path.split("/") # => /home/index => ["", "home", "index"] # before implementing router
+    controller, action = Routes[path]
     [controller || "home", action || "index"]
   end
 
