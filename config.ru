@@ -4,6 +4,12 @@
 class App
   def call(env)
     # Return the response array here
+    # if env[]
+    [
+      200,
+      {'Content-Type' => 'text/plain'},
+      [env['REQUEST_PATH']]
+    ]
   end
 end
 
