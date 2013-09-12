@@ -46,9 +46,9 @@ class FiltersTest < Test::Unit::TestCase
                   :index], out
     
     # With after_filter
-    # assert_equal [:before,
-    #               :index,
-    #               :after], out
+    assert_equal [:before,
+                  :index,
+                  :after], out
 
     # With around_filters
     # assert_equal ["around1",
