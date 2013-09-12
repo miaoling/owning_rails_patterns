@@ -18,4 +18,9 @@ class UserTest < Test::Unit::TestCase
   def test_table_name
     assert_equal "users", User.table_name
   end
+  
+  def test_all
+    assert_equal 5, User.all.count
+    assert_equal [1, 2, 3, 4, 5], User.all.map(&:id).sort
+  end  
 end
